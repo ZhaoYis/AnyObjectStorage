@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{590C10E2-D0DA-417D-9E89-420EE21B7EC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{46C9D8C6-B10A-473C-9737-6DDCC9CE5B3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OStorage", "OStorage\OStorage.csproj", "{3BF43CC7-762F-4AD9-ACE8-D227F916AF54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OStorage.UnitTest", "OStorage.UnitTest\OStorage.UnitTest.csproj", "{012BA3E3-0E4D-4C8B-B9C0-FFFD75D16704}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3BF43CC7-762F-4AD9-ACE8-D227F916AF54} = {590C10E2-D0DA-417D-9E89-420EE21B7EC0}
+		{012BA3E3-0E4D-4C8B-B9C0-FFFD75D16704} = {46C9D8C6-B10A-473C-9737-6DDCC9CE5B3E}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BF43CC7-762F-4AD9-ACE8-D227F916AF54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BF43CC7-762F-4AD9-ACE8-D227F916AF54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BF43CC7-762F-4AD9-ACE8-D227F916AF54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BF43CC7-762F-4AD9-ACE8-D227F916AF54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{012BA3E3-0E4D-4C8B-B9C0-FFFD75D16704}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{012BA3E3-0E4D-4C8B-B9C0-FFFD75D16704}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{012BA3E3-0E4D-4C8B-B9C0-FFFD75D16704}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{012BA3E3-0E4D-4C8B-B9C0-FFFD75D16704}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
