@@ -20,9 +20,16 @@ public void ConfigureServices(IServiceCollection services)
 
 最后在你的项目中注入`IAnyObjectStorage<TKey, TValue>`服务，就可以愉快的使用它保存你想保存的任何数据了。
 
-项目还提供了默认以字符串为Key的实现，可注入`IAnyObjectStorage<TValue>`快速集成，当然如果你有其他自定义实现，可继承`AnyObjectStorage<TKey, TValue>`或者`AnyObjectStorage<TValue>`完成自定义逻辑，程序会自动发现并注入服务，示例如下：
+项目还提供了默认以字符串为Key的实现，可注入`IAnyObjectStorage<TValue>`快速集成，当然如果你有其他自定义实现，可继承`AnyObjectStorage<TKey, TValue>`或者`AnyObjectStorage<TValue>`完成自定义逻辑，最后手动注入服务，示例如下：
 
 ```c#
+public void ConfigureServices(IServiceCollection services)
+{
+		//其他代码
+  	services.AddOStorage()
+      .AddCustomOStorage<IImgBase64ObjectStorage, ImgBase64ObjectStorage>();
+}
+
 public interface IImgBase64ObjectStorage : IAnyObjectStorage<string>
 {
   	

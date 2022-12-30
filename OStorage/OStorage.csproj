@@ -5,6 +5,12 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <LangVersion>10</LangVersion>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageVersion>1.0.1</PackageVersion>
+        <PackageProjectUrl>https://github.com/ZhaoYis/AnyObjectStorage</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/ZhaoYis/AnyObjectStorage/blob/main/LICENSE</PackageLicenseUrl>
+        <AssemblyVersion>1.0.1</AssemblyVersion>
+        <FileVersion>1.0.1</FileVersion>
     </PropertyGroup>
 
     <ItemGroup>

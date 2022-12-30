@@ -1,26 +1,25 @@
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using OStorage;
 
 namespace Microsoft.Extensions.DependencyInjection;
 
 public static class ServiceCollectionExtensions
 {
-    public static void AddOStorage(this IServiceCollection services)
+    public static IServiceCollection AddOStorage(this IServiceCollection services)
     {
-        var entryAssembly = Assembly.GetEntryAssembly();
-        if (entryAssembly != null)
-        {
-            var referencedAssemblies = entryAssembly.GetReferencedAssemblies()
-                .Select(Assembly.Load);
+        return services.Scan(s =>
+            s.FromAssembliesOf(typeof(IAnyObjectStorage<,>))
+                .AddClasses(c => c.AssignableTo(typeof(IAnyObjectStorage<,>)))
+                .AsImplementedInterfaces()
+                .WithSingletonLifetime()
+        );
+    }
 
-            var assemblies = new List<Assembly> { entryAssembly }.Concat(referencedAssemblies);
-            services.Scan(s =>
-                s.FromAssemblies(assemblies)
-                    .AddClasses(c => c.AssignableTo(typeof(IAnyObjectStorage<>)))
-                    .AsImplementedInterfaces()
-                    .WithSingletonLifetime());
-        }
+    public static IServiceCollection AddCustomOStorage<TService, TImplementation>(this IServiceCollection services)
+        where TService : class
+        where TImplementation : class, TService
+    {
+        services.TryAddSingleton(typeof(TService), typeof(TImplementation));
+        return services;
     }
 }
