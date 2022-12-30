@@ -5,7 +5,7 @@
 ### 快速集成
 
 ```bash
-> dotnet add package OStorage --version 1.0.0
+> dotnet add package OStorage --version 1.0.1
 ```
 
 然后注入服务：
@@ -13,8 +13,8 @@
 ```c#
 public void ConfigureServices(IServiceCollection services)
 {
-		//其他代码
-  	services.AddOStorage();
+    //其他代码
+    services.AddOStorage();
 }
 ```
 
@@ -25,8 +25,8 @@ public void ConfigureServices(IServiceCollection services)
 ```c#
 public void ConfigureServices(IServiceCollection services)
 {
-		//其他代码
-  	services.AddOStorage()
+   //其他代码
+   services.AddOStorage()
       .AddCustomOStorage<IImgBase64ObjectStorage, ImgBase64ObjectStorage>();
 }
 
